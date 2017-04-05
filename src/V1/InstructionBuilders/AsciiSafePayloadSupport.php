@@ -51,7 +51,7 @@ use GanbaroDigital\MessagingPipeline\V1\Instructions\DecodePayloadFromAsciiSafeS
 use GanbaroDigital\MessagingPipeline\V1\Instructions\EncodePayloadToAsciiSafeString;
 
 /**
- * factory for creating
+ * factory for creating pipeline instructions
  */
 class AsciiSafePayloadSupport extends GenericInstructionBuilder
 {

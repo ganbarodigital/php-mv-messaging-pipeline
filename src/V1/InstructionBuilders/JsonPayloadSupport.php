@@ -51,7 +51,7 @@ use GanbaroDigital\MessagingPipeline\V1\Instructions\DecodePayloadFromJson;
 use GanbaroDigital\MessagingPipeline\V1\Instructions\EncodePayloadToJson;
 
 /**
- * factory for creating
+ * factory for creating pipeline instructions
  */
 class JsonPayloadSupport extends GenericInstructionBuilder
 {

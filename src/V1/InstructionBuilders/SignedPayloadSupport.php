@@ -51,7 +51,7 @@ use GanbaroDigital\MessagingPipeline\V1\Instructions\SignPayload;
 use GanbaroDigital\MessagingPipeline\V1\Instructions\VerifyPayloadSignature;
 
 /**
- * factory for creating
+ * factory for creating pipeline instructions
  */
 class SignedPayloadSupport extends GenericInstructionBuilder
 {

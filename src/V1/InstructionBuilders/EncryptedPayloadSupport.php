@@ -51,7 +51,7 @@ use GanbaroDigital\MessagingPipeline\V1\Instructions\DecryptPayload;
 use GanbaroDigital\MessagingPipeline\V1\Instructions\EncryptPayload;
 
 /**
- * factory for creating
+ * factory for creating pipeline instructions
  */
 class EncryptedPayloadSupport extends GenericInstructionBuilder
 {
