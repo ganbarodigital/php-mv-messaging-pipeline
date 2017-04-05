@@ -45,9 +45,7 @@ declare(strict_types=1);
 
 namespace GanbaroDigital\MessagingPipeline\V1\Operations;
 
-use GanbaroDigital\MessagingPipeline\V1\Exceptions\HmacNotFound;
 use GanbaroDigital\MessagingPipeline\V1\Exceptions\HmacVerificationFailed;
-use GanbaroDigital\MessagingPipeline\V1\Requirements\RequireValidHmacAlgorithm;
 
 /**
  * make sure that the message's hashed authentication code (HMAC) is
