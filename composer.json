@@ -1,5 +1,5 @@
 {
-    "name": "ganbarodigital/php-mv-messaging-middleware",
+    "name": "ganbarodigital/php-mv-messaging-pipeline",
     "type": "library",
     "license": "BSD-3-Clause",
     "authors": [
@@ -23,7 +23,7 @@
     },
     "autoload": {
         "psr-4": {
-            "GanbaroDigital\\MessagingMiddleware\\": "src"
+            "GanbaroDigital\\MessagingPipeline\\": "src"
         }
     }
 }

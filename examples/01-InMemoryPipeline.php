@@ -39,10 +39,10 @@ $origData = (object)[
 var_dump($origData);
 
 // let's create a message, suitable for sending over Amazon SQS
-$message = $pipelines[BuildMessagingPipelines::TRANSMIT_BUS]($origData);
+$message = $pipelines[BuildMessagingPipelines::TRANSMIT_PIPELINE]($origData);
 var_dump($message);
 
 // now, let's turn that message back into the data, as if we have received
 // the message from Amazon SQS
-$receivedData = $pipelines[BuildMessagingPipelines::RECEIVE_BUS]($message);
+$receivedData = $pipelines[BuildMessagingPipelines::RECEIVE_PIPELINE]($message);
 var_dump($receivedData);

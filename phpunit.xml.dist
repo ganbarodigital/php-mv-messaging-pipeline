@@ -2,7 +2,7 @@
 
 <phpunit colors="true" bootstrap="vendor/autoload.php" verbose="true">
   <testsuites>
-    <testsuite name="GanbaroDigital/MessagingMiddleware">
+    <testsuite name="GanbaroDigital/MessagingPipeline">
       <directory>./tests/</directory>
     </testsuite>
   </testsuites>
