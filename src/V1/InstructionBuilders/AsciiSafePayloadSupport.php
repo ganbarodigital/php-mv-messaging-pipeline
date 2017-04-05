@@ -36,19 +36,19 @@ declare(strict_types=1);
  * POSSIBILITY OF SUCH DAMAGE.
  *
  * @category  Libraries
- * @package   MessagingMiddleware/InstructionBuilders
+ * @package   MessagingPipeline/InstructionBuilders
  * @author    Stuart Herbert <stuherbert@ganbarodigital.com>
  * @copyright 2017-present Ganbaro Digital Ltd www.ganbarodigital.com
  * @license   http://www.opensource.org/licenses/bsd-license.php  BSD License
- * @link      http://ganbarodigital.github.io/php-mv-messaging-middleware
+ * @link      http://ganbarodigital.github.io/php-mv-messaging-pipeline
  */
 
-namespace GanbaroDigital\MessagingMiddleware\V1\InstructionBuilders;
+namespace GanbaroDigital\MessagingPipeline\V1\InstructionBuilders;
 
 use GanbaroDigital\InstructionPipeline\V1\InstructionBuilders\GenericInstructionBuilder;
 use GanbaroDigital\InstructionPipeline\V1\Interfaces\InstructionPipeline;
-use GanbaroDigital\MessagingMiddleware\V1\Instructions\DecodePayloadFromAsciiSafeString;
-use GanbaroDigital\MessagingMiddleware\V1\Instructions\EncodePayloadToAsciiSafeString;
+use GanbaroDigital\MessagingPipeline\V1\Instructions\DecodePayloadFromAsciiSafeString;
+use GanbaroDigital\MessagingPipeline\V1\Instructions\EncodePayloadToAsciiSafeString;
 
 /**
  * factory for creating

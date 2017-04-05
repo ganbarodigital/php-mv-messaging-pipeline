@@ -36,20 +36,20 @@ declare(strict_types=1);
  * POSSIBILITY OF SUCH DAMAGE.
  *
  * @category  Libraries
- * @package   MessagingMiddleware/Operations
+ * @package   MessagingPipeline/Operations
  * @author    Stuart Herbert <stuherbert@ganbarodigital.com>
  * @copyright 2017-present Ganbaro Digital Ltd www.ganbarodigital.com
  * @license   http://www.opensource.org/licenses/bsd-license.php  BSD License
- * @link      http://ganbarodigital.github.io/php-mv-messaging-middleware
+ * @link      http://ganbarodigital.github.io/php-mv-messaging-pipeline
  */
 
-namespace GanbaroDigitalTest\MessagingMiddleware\V1\Operations;
+namespace GanbaroDigitalTest\MessagingPipeline\V1\Operations;
 
-use GanbaroDigital\MessagingMiddleware\V1\Operations\DecodeJson;
+use GanbaroDigital\MessagingPipeline\V1\Operations\DecodeJson;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @coversDefaultClass GanbaroDigital\MessagingMiddleware\V1\Operations\DecodeJson
+ * @coversDefaultClass GanbaroDigital\MessagingPipeline\V1\Operations\DecodeJson
  */
 class DecodeJsonTest extends TestCase
 {
@@ -101,7 +101,7 @@ class DecodeJsonTest extends TestCase
 
     /**
      * @covers ::from
-     * @expectedException GanbaroDigital\MessagingMiddleware\V1\Exceptions\CannotJsonDecode
+     * @expectedException GanbaroDigital\MessagingPipeline\V1\Exceptions\CannotJsonDecode
      */
     public function testThrowsExceptionWhenFedInvalidJson()
     {

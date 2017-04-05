@@ -34,14 +34,14 @@
  * POSSIBILITY OF SUCH DAMAGE.
  *
  * @category  Libraries
- * @package   MessagingMiddleware/Exceptions
+ * @package   MessagingPipeline/Exceptions
  * @author    Stuart Herbert <stuherbert@ganbarodigital.com>
  * @copyright 2017-present Ganbaro Digital Ltd www.ganbarodigital.com
  * @license   http://www.opensource.org/licenses/bsd-license.php  BSD License
- * @link      http://ganbarodigital.github.io/php-mv-messaging-middleware
+ * @link      http://ganbarodigital.github.io/php-mv-messaging-pipeline
  */
 
-namespace GanbaroDigital\MessagingMiddleware\V1\Exceptions;
+namespace GanbaroDigital\MessagingPipeline\V1\Exceptions;
 
 use GanbaroDigital\ExceptionHelpers\V1\BaseExceptions\ParameterisedException;
 use GanbaroDigital\HttpStatus\Interfaces\HttpRuntimeErrorException;
@@ -53,7 +53,7 @@ use GanbaroDigital\HttpStatus\StatusProviders\RuntimeError\UnexpectedErrorStatus
  */
 class UnsupportedEncryptionCipher
   extends ParameterisedException
-  implements MessagingMiddlewareException, HttpRuntimeErrorException
+  implements MessagingPipelineException, HttpRuntimeErrorException
 {
     // we map onto HTTP 500
     use UnexpectedErrorStatusProvider;

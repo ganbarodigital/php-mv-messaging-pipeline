@@ -36,37 +36,37 @@ declare(strict_types=1);
  * POSSIBILITY OF SUCH DAMAGE.
  *
  * @category  Libraries
- * @package   MessagingMiddleware
+ * @package   MessagingPipeline
  * @author    Stuart Herbert <stuherbert@ganbarodigital.com>
  * @copyright 2017-present Ganbaro Digital Ltd www.ganbarodigital.com
  * @license   http://www.opensource.org/licenses/bsd-license.php  BSD License
- * @link      http://ganbarodigital.github.io/php-mv-messaging-middleware
+ * @link      http://ganbarodigital.github.io/php-mv-messaging-pipeline
  */
 
-namespace GanbaroDigital\MessagingMiddleware\V1;
+namespace GanbaroDigital\MessagingPipeline\V1;
 
 use GanbaroDigital\InstructionPipeline\V1\Interfaces\InstructionPipeline;
 use GanbaroDigital\InstructionPipeline\V1\PipelineBuilders\BuildInstructionPipeline;
 
 /**
  * factory class - assemble a uni-directional or bi-directional messaging
- * bus from the list of instructions that you supply
+ * pipeline from the list of instructions that you supply
  */
 class BuildMessagingPipelines extends BuildInstructionPipeline
 {
     /**
-     * this is the bus that encrypts and signs messages
+     * this is the pipeline that encrypts and signs messages
      *
      * added for readability
      */
-    const TRANSMIT_BUS = InstructionPipeline::DI_FORWARD;
+    const TRANSMIT_PIPELINE = InstructionPipeline::DI_FORWARD;
 
     /**
-     * this is the bus that verifies signatures and decrypts messages
+     * this is the pipeline that verifies signatures and decrypts messages
      *
      * added for readability
      */
-    const RECEIVE_BUS = InstructionPipeline::DI_REVERSE;
+    const RECEIVE_PIPELINE = InstructionPipeline::DI_REVERSE;
 
     /**
      * assemble a pipeline of instructions to execute

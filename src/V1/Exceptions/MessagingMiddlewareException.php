@@ -34,19 +34,19 @@
  * POSSIBILITY OF SUCH DAMAGE.
  *
  * @category  Libraries
- * @package   MessagingMiddleware/Exceptions
+ * @package   MessagingPipeline/Exceptions
  * @author    Stuart Herbert <stuherbert@ganbarodigital.com>
  * @copyright 2017-present Ganbaro Digital Ltd www.ganbarodigital.com
  * @license   http://www.opensource.org/licenses/bsd-license.php  BSD License
- * @link      http://ganbarodigital.github.io/php-mv-messaging-middleware
+ * @link      http://ganbarodigital.github.io/php-mv-messaging-pipeline
  */
 
-namespace GanbaroDigital\MessagingMiddleware\V1\Exceptions;
+namespace GanbaroDigital\MessagingPipeline\V1\Exceptions;
 
 /**
  * used for type-hinting all exceptions thrown by this library
  */
-interface MessagingMiddlewareException
+interface MessagingPipelineException
 {
 
 }

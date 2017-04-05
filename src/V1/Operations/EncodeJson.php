@@ -36,16 +36,16 @@ declare(strict_types=1);
  * POSSIBILITY OF SUCH DAMAGE.
  *
  * @category  Libraries
- * @package   MessagingMiddleware/Operations
+ * @package   MessagingPipeline/Operations
  * @author    Stuart Herbert <stuherbert@ganbarodigital.com>
  * @copyright 2017-present Ganbaro Digital Ltd www.ganbarodigital.com
  * @license   http://www.opensource.org/licenses/bsd-license.php  BSD License
- * @link      http://ganbarodigital.github.io/php-mv-messaging-middleware
+ * @link      http://ganbarodigital.github.io/php-mv-messaging-pipeline
  */
 
-namespace GanbaroDigital\MessagingMiddleware\V1\Operations;
+namespace GanbaroDigital\MessagingPipeline\V1\Operations;
 
-use GanbaroDigital\MessagingMiddleware\V1\Exceptions\CannotJsonEncode;
+use GanbaroDigital\MessagingPipeline\V1\Exceptions\CannotJsonEncode;
 
 /**
  * convert a PHP value to JSON encoding format, with error detection!

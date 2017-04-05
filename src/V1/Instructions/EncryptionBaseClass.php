@@ -36,19 +36,19 @@ declare(strict_types=1);
  * POSSIBILITY OF SUCH DAMAGE.
  *
  * @category  Libraries
- * @package   MessagingMiddleware/Instructions
+ * @package   MessagingPipeline/Instructions
  * @author    Stuart Herbert <stuherbert@ganbarodigital.com>
  * @copyright 2017-present Ganbaro Digital Ltd www.ganbarodigital.com
  * @license   http://www.opensource.org/licenses/bsd-license.php  BSD License
- * @link      http://ganbarodigital.github.io/php-mv-messaging-middleware
+ * @link      http://ganbarodigital.github.io/php-mv-messaging-pipeline
  */
 
-namespace GanbaroDigital\MessagingMiddleware\V1\Instructions;
+namespace GanbaroDigital\MessagingPipeline\V1\Instructions;
 
-use GanbaroDigital\MessagingMiddleware\V1\InstructionTypes;
-use GanbaroDigital\MessagingMiddleware\V1\NextInstruction;
-use GanbaroDigital\MessagingMiddleware\V1\Operations;
-use GanbaroDigital\MessagingMiddleware\V1\Requirements;
+use GanbaroDigital\MessagingPipeline\V1\InstructionTypes;
+use GanbaroDigital\MessagingPipeline\V1\NextInstruction;
+use GanbaroDigital\MessagingPipeline\V1\Operations;
+use GanbaroDigital\MessagingPipeline\V1\Requirements;
 
 /**
  * base class for all MessagingPipelineInstructions that work with

@@ -36,22 +36,22 @@ declare(strict_types=1);
  * POSSIBILITY OF SUCH DAMAGE.
  *
  * @category  Libraries
- * @package   MessagingMiddleware/Requirements
+ * @package   MessagingPipeline/Requirements
  * @author    Stuart Herbert <stuherbert@ganbarodigital.com>
  * @copyright 2017-present Ganbaro Digital Ltd www.ganbarodigital.com
  * @license   http://www.opensource.org/licenses/bsd-license.php  BSD License
- * @link      http://ganbarodigital.github.io/php-mv-messaging-middleware
+ * @link      http://ganbarodigital.github.io/php-mv-messaging-pipeline
  */
 
-namespace GanbaroDigitalTest\MessagingMiddleware\V1\Requirements;
+namespace GanbaroDigitalTest\MessagingPipeline\V1\Requirements;
 
 use GanbaroDigital\Defensive\V1\Interfaces\Requirement;
 use GanbaroDigital\Defensive\V1\Interfaces\ListRequirement;
-use GanbaroDigital\MessagingMiddleware\V1\Requirements\RequireValidEncryptionIV;
+use GanbaroDigital\MessagingPipeline\V1\Requirements\RequireValidEncryptionIV;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @coversDefaultClass GanbaroDigital\MessagingMiddleware\V1\Requirements\RequireValidEncryptionIV
+ * @coversDefaultClass GanbaroDigital\MessagingPipeline\V1\Requirements\RequireValidEncryptionIV
  */
 class RequireValidEncryptionIVTest extends TestCase
 {
@@ -122,7 +122,7 @@ class RequireValidEncryptionIVTest extends TestCase
 
     /**
      * @covers ::__construct
-     * @expectedException GanbaroDigital\MessagingMiddleware\V1\Exceptions\UnsupportedEncryptionCipher
+     * @expectedException GanbaroDigital\MessagingPipeline\V1\Exceptions\UnsupportedEncryptionCipher
      */
     public function test_throws_UnsupportedEncryptionCipher_if_cipher_is_not_supported()
     {
@@ -141,7 +141,7 @@ class RequireValidEncryptionIVTest extends TestCase
     /**
      * @covers ::apply
      * @covers ::to
-     * @expectedException GanbaroDigital\MessagingMiddleware\V1\Exceptions\InvalidEncryptionIV
+     * @expectedException GanbaroDigital\MessagingPipeline\V1\Exceptions\InvalidEncryptionIV
      */
     public function test_throws_InvalidEncryptionIV_if_iv_is_wrong_length()
     {
@@ -227,7 +227,7 @@ class RequireValidEncryptionIVTest extends TestCase
     /**
      * @covers ::apply
      * @covers ::toList
-     * @expectedException GanbaroDigital\MessagingMiddleware\V1\Exceptions\InvalidEncryptionIV
+     * @expectedException GanbaroDigital\MessagingPipeline\V1\Exceptions\InvalidEncryptionIV
      */
     public function test_can_use_as_ListRequirement()
     {

@@ -36,23 +36,23 @@ declare(strict_types=1);
  * POSSIBILITY OF SUCH DAMAGE.
  *
  * @category  Libraries
- * @package   MessagingMiddleware
+ * @package   MessagingPipeline
  * @author    Stuart Herbert <stuherbert@ganbarodigital.com>
  * @copyright 2017-present Ganbaro Digital Ltd www.ganbarodigital.com
  * @license   http://www.opensource.org/licenses/bsd-license.php  BSD License
- * @link      http://ganbarodigital.github.io/php-mv-messaging-middleware
+ * @link      http://ganbarodigital.github.io/php-mv-messaging-pipeline
  */
 
-namespace GanbaroDigitalTest\MessagingMiddleware\V1;
+namespace GanbaroDigitalTest\MessagingPipeline\V1;
 
-use GanbaroDigital\MessagingMiddleware\V1\BuildMessagingPipelines;
-use GanbaroDigital\MessagingMiddleware\V1\InstructionBuilders;
-use GanbaroDigital\MessagingMiddleware\V1\Instructions;
-use GanbaroDigital\MessagingMiddleware\V1\NextInstruction;
+use GanbaroDigital\MessagingPipeline\V1\BuildMessagingPipelines;
+use GanbaroDigital\MessagingPipeline\V1\InstructionBuilders;
+use GanbaroDigital\MessagingPipeline\V1\Instructions;
+use GanbaroDigital\MessagingPipeline\V1\NextInstruction;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @coversDefaultClass GanbaroDigital\MessagingMiddleware\V1\BuildMessagingPipelines
+ * @coversDefaultClass GanbaroDigital\MessagingPipeline\V1\BuildMessagingPipelines
  */
 class BuildMessagingPipelineTest extends TestCase
 {
@@ -84,13 +84,13 @@ class BuildMessagingPipelineTest extends TestCase
         ];
 
         $expectedPipelines = [
-            BuildMessagingPipelines::TRANSMIT_BUS => new NextInstruction([
+            BuildMessagingPipelines::TRANSMIT_PIPELINE => new NextInstruction([
                 new Instructions\EncodePayloadToJson,
                 new Instructions\EncryptPayload($config['encryption']),
                 new Instructions\SignPayload($config['hmac']),
                 new Instructions\EncodePayloadToAsciiSafeString,
             ]),
-            BuildMessagingPipelines::RECEIVE_BUS => new NextInstruction([
+            BuildMessagingPipelines::RECEIVE_PIPELINE => new NextInstruction([
                 new Instructions\DecodePayloadFromAsciiSafeString,
                 new Instructions\VerifyPayloadSignature($config['hmac']),
                 new Instructions\DecryptPayload($config['encryption']),

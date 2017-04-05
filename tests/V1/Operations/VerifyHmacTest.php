@@ -36,20 +36,20 @@ declare(strict_types=1);
  * POSSIBILITY OF SUCH DAMAGE.
  *
  * @category  Libraries
- * @package   MessagingMiddleware/Operations
+ * @package   MessagingPipeline/Operations
  * @author    Stuart Herbert <stuherbert@ganbarodigital.com>
  * @copyright 2017-present Ganbaro Digital Ltd www.ganbarodigital.com
  * @license   http://www.opensource.org/licenses/bsd-license.php  BSD License
- * @link      http://ganbarodigital.github.io/php-mv-messaging-middleware
+ * @link      http://ganbarodigital.github.io/php-mv-messaging-pipeline
  */
 
-namespace GanbaroDigitalTest\MessagingMiddleware\V1\Operations;
+namespace GanbaroDigitalTest\MessagingPipeline\V1\Operations;
 
-use GanbaroDigital\MessagingMiddleware\V1\Operations\VerifyHmac;
+use GanbaroDigital\MessagingPipeline\V1\Operations\VerifyHmac;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @coversDefaultClass GanbaroDigital\MessagingMiddleware\V1\Operations\VerifyHmac
+ * @coversDefaultClass GanbaroDigital\MessagingPipeline\V1\Operations\VerifyHmac
  */
 class VerifyHmacTest extends TestCase
 {
@@ -82,7 +82,7 @@ class VerifyHmacTest extends TestCase
 
     /**
      * @covers ::for
-     * @expectedException GanbaroDigital\MessagingMiddleware\V1\Exceptions\HmacVerificationFailed
+     * @expectedException GanbaroDigital\MessagingPipeline\V1\Exceptions\HmacVerificationFailed
      */
     public function test_throws_HmacVerificationFailed_if_incorrect_hmac()
     {
@@ -132,7 +132,7 @@ class VerifyHmacTest extends TestCase
 
     /**
      * @covers ::for
-     * @expectedException GanbaroDigital\MessagingMiddleware\V1\Exceptions\UnsupportedHmacAlgorithm
+     * @expectedException GanbaroDigital\MessagingPipeline\V1\Exceptions\UnsupportedHmacAlgorithm
      */
     public function test_throws_UnsupportedHmacAlgorithm_if_hashType_is_invalid()
     {

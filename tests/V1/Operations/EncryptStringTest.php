@@ -36,20 +36,20 @@ declare(strict_types=1);
  * POSSIBILITY OF SUCH DAMAGE.
  *
  * @category  Libraries
- * @package   MessagingMiddleware/Operations
+ * @package   MessagingPipeline/Operations
  * @author    Stuart Herbert <stuherbert@ganbarodigital.com>
  * @copyright 2017-present Ganbaro Digital Ltd www.ganbarodigital.com
  * @license   http://www.opensource.org/licenses/bsd-license.php  BSD License
- * @link      http://ganbarodigital.github.io/php-mv-messaging-middleware
+ * @link      http://ganbarodigital.github.io/php-mv-messaging-pipeline
  */
 
-namespace GanbaroDigitalTest\MessagingMiddleware\V1\Operations;
+namespace GanbaroDigitalTest\MessagingPipeline\V1\Operations;
 
-use GanbaroDigital\MessagingMiddleware\V1\Operations\EncryptString;
+use GanbaroDigital\MessagingPipeline\V1\Operations\EncryptString;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @coversDefaultClass GanbaroDigital\MessagingMiddleware\V1\Operations\EncryptString
+ * @coversDefaultClass GanbaroDigital\MessagingPipeline\V1\Operations\EncryptString
  */
 class EncryptStringTest extends TestCase
 {

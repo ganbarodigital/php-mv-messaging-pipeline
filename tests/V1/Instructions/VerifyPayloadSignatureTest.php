@@ -36,27 +36,27 @@ declare(strict_types=1);
  * POSSIBILITY OF SUCH DAMAGE.
  *
  * @category  Libraries
- * @package   MessagingMiddleware/Instructions
+ * @package   MessagingPipeline/Instructions
  * @author    Stuart Herbert <stuherbert@ganbarodigital.com>
  * @copyright 2017-present Ganbaro Digital Ltd www.ganbarodigital.com
  * @license   http://www.opensource.org/licenses/bsd-license.php  BSD License
- * @link      http://ganbarodigital.github.io/php-mv-messaging-middleware
+ * @link      http://ganbarodigital.github.io/php-mv-messaging-pipeline
  */
 
-namespace GanbaroDigitalTest\MessagingMiddleware\V1\Instructions;
+namespace GanbaroDigitalTest\MessagingPipeline\V1\Instructions;
 
-use GanbaroDigital\MessagingMiddleware\V1\Constants\Hmac;
-use GanbaroDigital\MessagingMiddleware\V1\Instructions\VerifyPayloadSignature;
-use GanbaroDigital\MessagingMiddleware\V1\NextInstruction;
+use GanbaroDigital\MessagingPipeline\V1\Constants\Hmac;
+use GanbaroDigital\MessagingPipeline\V1\Instructions\VerifyPayloadSignature;
+use GanbaroDigital\MessagingPipeline\V1\NextInstruction;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @coversDefaultClass GanbaroDigital\MessagingMiddleware\V1\Instructions\VerifyPayloadSignature
+ * @coversDefaultClass GanbaroDigital\MessagingPipeline\V1\Instructions\VerifyPayloadSignature
  */
 class VerifyPayloadSignatureTest extends TestCase
 {
     /**
-     * @covers GanbaroDigital\MessagingMiddleware\V1\Instructions\HmacBaseClass::__construct
+     * @covers GanbaroDigital\MessagingPipeline\V1\Instructions\HmacBaseClass::__construct
      */
     public function test_can_instantiate()
     {
@@ -125,7 +125,7 @@ class VerifyPayloadSignatureTest extends TestCase
 
     /**
      * @covers ::__invoke
-     * @expectedException GanbaroDigital\MessagingMiddleware\V1\Exceptions\HmacVerificationFailed
+     * @expectedException GanbaroDigital\MessagingPipeline\V1\Exceptions\HmacVerificationFailed
      */
     public function test_will_reject_invalid_hmac_in_strings()
     {

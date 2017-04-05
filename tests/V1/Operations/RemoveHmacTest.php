@@ -36,22 +36,22 @@ declare(strict_types=1);
  * POSSIBILITY OF SUCH DAMAGE.
  *
  * @category  Libraries
- * @package   MessagingMiddleware/Operations
+ * @package   MessagingPipeline/Operations
  * @author    Stuart Herbert <stuherbert@ganbarodigital.com>
  * @copyright 2017-present Ganbaro Digital Ltd www.ganbarodigital.com
  * @license   http://www.opensource.org/licenses/bsd-license.php  BSD License
- * @link      http://ganbarodigital.github.io/php-mv-messaging-middleware
+ * @link      http://ganbarodigital.github.io/php-mv-messaging-pipeline
  */
 
-namespace GanbaroDigitalTest\MessagingMiddleware\V1\Operations;
+namespace GanbaroDigitalTest\MessagingPipeline\V1\Operations;
 
-use GanbaroDigital\MessagingMiddleware\V1\Constants\Hmac;
-use GanbaroDigital\MessagingMiddleware\V1\Operations\AddHmac;
-use GanbaroDigital\MessagingMiddleware\V1\Operations\RemoveHmac;
+use GanbaroDigital\MessagingPipeline\V1\Constants\Hmac;
+use GanbaroDigital\MessagingPipeline\V1\Operations\AddHmac;
+use GanbaroDigital\MessagingPipeline\V1\Operations\RemoveHmac;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @coversDefaultClass GanbaroDigital\MessagingMiddleware\V1\Operations\RemoveHmac
+ * @coversDefaultClass GanbaroDigital\MessagingPipeline\V1\Operations\RemoveHmac
  */
 class RemoveHmacTest extends TestCase
 {
@@ -85,7 +85,7 @@ class RemoveHmacTest extends TestCase
 
     /**
      * @covers ::from
-     * @expectedException GanbaroDigital\MessagingMiddleware\V1\Exceptions\HmacNotFound
+     * @expectedException GanbaroDigital\MessagingPipeline\V1\Exceptions\HmacNotFound
      */
     public function test_throws_HmacNotFound_if_no_hmac_at_front_of_string()
     {

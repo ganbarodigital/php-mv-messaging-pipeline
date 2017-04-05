@@ -36,23 +36,23 @@ declare(strict_types=1);
  * POSSIBILITY OF SUCH DAMAGE.
  *
  * @category  Libraries
- * @package   MessagingMiddleware/Requirements
+ * @package   MessagingPipeline/Requirements
  * @author    Stuart Herbert <stuherbert@ganbarodigital.com>
  * @copyright 2017-present Ganbaro Digital Ltd www.ganbarodigital.com
  * @license   http://www.opensource.org/licenses/bsd-license.php  BSD License
- * @link      http://ganbarodigital.github.io/php-mv-messaging-middleware
+ * @link      http://ganbarodigital.github.io/php-mv-messaging-pipeline
  */
 
-namespace GanbaroDigital\MessagingMiddleware\V1\Requirements;
+namespace GanbaroDigital\MessagingPipeline\V1\Requirements;
 
 use GanbaroDigital\Defensive\V1\Interfaces\ListRequirement;
 use GanbaroDigital\Defensive\V1\Interfaces\Requirement;
 use GanbaroDigital\Defensive\V1\Requirements\InvokeableRequirement;
 use GanbaroDigital\Defensive\V1\Requirements\ListableRequirement;
-use GanbaroDigital\MessagingMiddleware\V1\Checks\IsValidEncryptionCipher;
-use GanbaroDigital\MessagingMiddleware\V1\Checks\IsValidEncryptionIV;
-use GanbaroDigital\MessagingMiddleware\V1\Exceptions\InvalidEncryptionIV;
-use GanbaroDigital\MessagingMiddleware\V1\Exceptions\UnsupportedEncryptionCipher;
+use GanbaroDigital\MessagingPipeline\V1\Checks\IsValidEncryptionCipher;
+use GanbaroDigital\MessagingPipeline\V1\Checks\IsValidEncryptionIV;
+use GanbaroDigital\MessagingPipeline\V1\Exceptions\InvalidEncryptionIV;
+use GanbaroDigital\MessagingPipeline\V1\Exceptions\UnsupportedEncryptionCipher;
 
 /**
  * make sure that we have a valid encryption initialisation vector

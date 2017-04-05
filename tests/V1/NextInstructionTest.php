@@ -36,23 +36,23 @@ declare(strict_types=1);
  * POSSIBILITY OF SUCH DAMAGE.
  *
  * @category  Libraries
- * @package   MessagingMiddleware
+ * @package   MessagingPipeline
  * @author    Stuart Herbert <stuherbert@ganbarodigital.com>
  * @copyright 2017-present Ganbaro Digital Ltd www.ganbarodigital.com
  * @license   http://www.opensource.org/licenses/bsd-license.php  BSD License
- * @link      http://ganbarodigital.github.io/php-mv-messaging-middleware
+ * @link      http://ganbarodigital.github.io/php-mv-messaging-pipeline
  */
 
-namespace GanbaroDigitalTest\MessagingMiddleware\V1;
+namespace GanbaroDigitalTest\MessagingPipeline\V1;
 
-use GanbaroDigital\MessagingMiddleware\V1\BuildMessagingPipelines;
-use GanbaroDigital\MessagingMiddleware\V1\InstructionBuilders;
-use GanbaroDigital\MessagingMiddleware\V1\Instructions;
-use GanbaroDigital\MessagingMiddleware\V1\NextInstruction;
+use GanbaroDigital\MessagingPipeline\V1\BuildMessagingPipelines;
+use GanbaroDigital\MessagingPipeline\V1\InstructionBuilders;
+use GanbaroDigital\MessagingPipeline\V1\Instructions;
+use GanbaroDigital\MessagingPipeline\V1\NextInstruction;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @coversDefaultClass GanbaroDigital\MessagingMiddleware\V1\NextInstruction
+ * @coversDefaultClass GanbaroDigital\MessagingPipeline\V1\NextInstruction
  */
 class NextInstructionTest extends TestCase
 {
@@ -89,8 +89,8 @@ class NextInstructionTest extends TestCase
         // ----------------------------------------------------------------
         // perform the change
 
-        $actualTransmitMessage = $pipelines[BuildMessagingPipelines::TRANSMIT_BUS]->process($input);
-        $actualReceivedMessage = $pipelines[BuildMessagingPipelines::RECEIVE_BUS]->process($actualTransmitMessage);
+        $actualTransmitMessage = $pipelines[BuildMessagingPipelines::TRANSMIT_PIPELINE]->process($input);
+        $actualReceivedMessage = $pipelines[BuildMessagingPipelines::RECEIVE_PIPELINE]->process($actualTransmitMessage);
 
         // ----------------------------------------------------------------
         // test the results
