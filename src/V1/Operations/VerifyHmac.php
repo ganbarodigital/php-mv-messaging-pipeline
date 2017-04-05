@@ -69,17 +69,16 @@ class VerifyHmac
      *         a shared, secret password
      * @return void
      *
+     * @throws UnsupportedHmacAlgorithm
+     *         if $hashAlgo isn't supported by our PHP runtime
      * @throws HmacVerificationFailed
      *         if the HMAC attached to $message doesn't match what we expect
      *         (strongly suggests $message has been tampered with)
      */
     public static function for(string $message, $expectedHmac, string $hashAlgo, string $key)
     {
-        // robustness!
-        RequireValidHmacAlgorithm::apply()->to($hashAlgo);
-
-        // do we agree with this signature?
-        $actualHmac = hash_hmac($hashAlgo, $message, $key);
+        // has the message been tampered with?
+        $actualHmac = CalculateHmac::for($message, $hashAlgo, $key);
         if ($expectedHmac !== $actualHmac) {
             throw HmacVerificationFailed::newFromInputParameter($message, '$message');
         }

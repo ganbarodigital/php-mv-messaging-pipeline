@@ -46,7 +46,6 @@ declare(strict_types=1);
 namespace GanbaroDigital\MessagingPipeline\V1\Operations;
 
 use GanbaroDigital\MessagingPipeline\V1\Constants\Hmac;
-use GanbaroDigital\MessagingPipeline\V1\Requirements\RequireValidHmacAlgorithm;
 
 /**
  * add a hashed-message authentication code (HMAC) to a message
@@ -65,13 +64,13 @@ class AddHmac
      *         the shared password you want to use to calculate the HMAC
      * @return string
      *         the message, with the HMAC added
+     *
+     * @throws UnsupportedHmacAlgorithm
+     *         if $hashAlgo isn't supported by our PHP runtime
      */
     public static function to(string $message, string $hashAlgo, string $key) : string
     {
-        // robustness!
-        RequireValidHmacAlgorithm::apply()->to($hashAlgo);
-
-        $sig = hash_hmac($hashAlgo, $message, $key);
+        $sig = CalculateHmac::for($message, $hashAlgo, $key);
         return $sig . Hmac::MARKER . $message;
     }
 }

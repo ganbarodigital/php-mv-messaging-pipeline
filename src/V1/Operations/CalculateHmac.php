@@ -36,48 +36,42 @@ declare(strict_types=1);
  * POSSIBILITY OF SUCH DAMAGE.
  *
  * @category  Libraries
- * @package   MessagingPipeline/Instructions
+ * @package   MessagingPipeline/Operations
  * @author    Stuart Herbert <stuherbert@ganbarodigital.com>
  * @copyright 2017-present Ganbaro Digital Ltd www.ganbarodigital.com
  * @license   http://www.opensource.org/licenses/bsd-license.php  BSD License
  * @link      http://ganbarodigital.github.io/php-mv-messaging-pipeline
  */
 
-namespace GanbaroDigital\MessagingPipeline\V1\Instructions;
+namespace GanbaroDigital\MessagingPipeline\V1\Operations;
 
-use GanbaroDigital\MessagingPipeline\V1\NextInstruction;
-use GanbaroDigital\MessagingPipeline\V1\Operations;
-use GanbaroDigital\MessagingPipeline\V1\Requirements;
+use GanbaroDigital\MessagingPipeline\V1\Requirements\RequireValidHmacAlgorithm;
 
 /**
- * pipeline instruction - checks the HMAC that should be attached to our
- * payload, then strips it off
+ * create a hashed-message authentication code (HMAC) for a message
  */
-class VerifyPayloadSignature extends HmacBaseClass
+class CalculateHmac
 {
     /**
-     * executes whatever work this messaging pipeline instruction
-     * is here to do
+     * create hashed-message authentication code (HMAC) for a message
      *
-     * @param  NextInstruction $next
-     *         the instruction to call when our work is done
-     * @param  string $payload
-     *         the data that we're processing
-     * @return mixed
-     *         whatever $next() returns when we call it
+     * @param  string $message
+     *         the message you want to sign
+     * @param  string $hashAlgo
+     *         the hash algorithm you want to use
+     *         this must be supported by hash_hmac()
+     * @param  string $key
+     *         the shared password you want to use to calculate the HMAC
+     * @return string
+     *         the HMAC that we calculated
+     *
+     * @throws UnsupportedHmacAlgorithm
+     *         if $hashAlgo isn't supported by our PHP runtime
      */
-    public function __invoke(NextInstruction $next, string $payload)
+    public static function for(string $message, string $hashAlgo, string $key) : string
     {
-        // separate out the HMAC from the message
-        list($expectedHmac, $message) = Operations\RemoveHmac::from($payload);
-
-        // verify the payload
-        //
-        // if the HMAC is missing or invalid, it will throw an exception
-        // so that we don't have to
-        Operations\VerifyHmac::for($message, $expectedHmac, $this->hmacType, $this->hmacKey);
-
-        // all done
-        return $next->process($message);
+        // robustness!
+        RequireValidHmacAlgorithm::apply()->to($hashAlgo);
+        return hash_hmac($hashAlgo, $message, $key);
     }
 }
