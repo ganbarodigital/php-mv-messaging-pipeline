@@ -1,0 +1,29 @@
+{
+    "name": "ganbarodigital/php-mv-messaging-pipeline",
+    "type": "library",
+    "license": "BSD-3-Clause",
+    "authors": [
+        { "name": "Stuart Herbert", "email": "stuart@stuartherbert.com" }
+    ],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/stuartherbert/Couscous"
+        }
+    ],
+    "require": {
+        "php": ">= 7.0",
+		"ganbarodigital/php-the-missing-bits": "dev-develop as 1.10.0",
+		"ganbarodigital/php-mv-instruction-pipeline": "^1.0",
+        "ganbarodigital/php-mv-defensive": "^1.2016082401"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.0",
+        "couscous/couscous": "dev-develop"
+    },
+    "autoload": {
+        "psr-4": {
+            "GanbaroDigital\\MessagingPipeline\\": "src"
+        }
+    }
+}
